@@ -1,0 +1,41 @@
+﻿@model SaveOurSpecies.Models.Adoption
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Animal Adoption Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.CommonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.CommonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patron.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patron.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

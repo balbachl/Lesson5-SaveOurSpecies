@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SaveOurSpecies.Models.Animal>
+
+<h2>Adoption Listing</h2>
+<table class="table table-warning">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.CommonName)</th>
+        <th>@Html.DisplayNameFor(model => model.Habitat)</th>
+        <th>@Html.DisplayNameFor(model => model.Status)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.CommonName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Habitat)</td>
+            <td>@Html.DisplayFor(modelItem => item.Status)</td>
+        </tr>
+    }
+</table>
+

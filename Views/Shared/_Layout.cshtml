@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Save Our Species</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+
+        body {
+            padding-top: 0px;
+        }
+
+        .navbar a:link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar a:visited {
+            color: silver;
+        }
+
+        .navbar a:hover {
+            color: white;
+            text-shadow: 2px 2px 10px goldenrod;
+            transition: 0.5s;
+        }
+
+        a:link, a:active {
+            color: darkgreen;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: darkgray;
+        }
+
+        a:hover {
+            color: darkgoldenrod;
+            text-shadow: 2px 2px 10px goldenrod;
+            transition: 0.5s;
+            box-shadow: 1px 1px black;
+        }
+
+        th {
+            background-color: darkgoldenrod;
+            color: white;
+        }
+
+        h1, h2 {
+            color: goldenrod;
+            text-shadow: 2px 2px black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="padding-left: 5%;">
+        <a class="navbar-brand" href="#"><i class='fas fa-frog'></i>&nbsp;Save Our Species</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item nav-link">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("Animals", "Index", "Animals")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("Patrons", "Index", "Patrons")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("Adoptions", "Index", "Adoptions")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("Photo Index", "Index", "Graphics")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p style="text-align:right;" class="text-success">&copy; @DateTime.Now.Year - Save Our Species <img src="~/Content/Images/paw.svg" style="width:20px;" /></p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
